@@ -66,10 +66,5 @@ I’m currently focusing on improving my skills in AI-driven systems, scalable b
 ![JWT](https://img.shields.io/badge/JWT-000000.svg?style=for-the-badge&logo=jsonwebtokens&logoColor=white)
 
 # 📊 GitHub Stats:
-![](https://github-readme-stats.vercel.app/api?username=vishwanath090&theme=city_lights&hide_border=true&include_all_commits=false&count_private=true)<br/>
-![](https://nirzak-streak-stats.vercel.app/?user=vishwanath090&theme=city_lights&hide_border=true)<br/>
-![](https://github-readme-stats.vercel.app/api/top-langs/?username=vishwanath090&theme=city_lights&hide_border=true&include_all_commits=false&count_private=true&layout=compact)
-
----
-[![](https://visitcount.itsvg.in/api?id=vishwanath090&icon=0&color=12)](https://visitcount.itsvg.in)
+<div align="center"> <!-- Main Stats --> <img src="https://github-readme-stats.vercel.app/api?username=vishwanath090&theme=city_lights&hide_border=true&show_icons=true&count_private=true" height="165" /> <!-- Streak Stats --> <img src="https://nirzak-streak-stats.vercel.app/?user=vishwanath090&theme=city_lights&hide_border=true" height="165" /> <!-- Top Languages --> <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=vishwanath090&theme=city_lights&hide_border=true&layout=compact&langs_count=8" height="155" /> </div>
 
