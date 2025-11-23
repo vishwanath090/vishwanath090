@@ -1,5 +1,25 @@
-# 💫 About Me:
-👋 I’m a dedicated Software Engineer and AI/ML enthusiast with a strong foundation in Data Structures, Algorithms, and AIML.<br><br>🚀 I specialize in building efficient, intelligent, and scalable solutions by combining software engineering principles with artificial intelligence and modern full-stack development.<br><br>💻 Skilled in Python, C++, TensorFlow, Flask, Django, React, Solidity, and .NET, with hands-on experience across backend systems, AI pipelines, and decentralized applications.<br><br>🔍 I have a problem-solving mindset and enjoy tackling complex algorithmic challenges on platforms like LeetCode and GeeksforGeeks to continually strengthen my technical depth.<br><br>🌱 Currently expanding my expertise in AI-driven software systems, blockchain integration, and full-stack product development.
+# Hi, I'm Vishwanath Biradar
+
+I'm a Software Engineer with a deep interest in Artificial Intelligence, Machine Learning, and scalable backend systems. I enjoy building practical, well-structured applications and exploring how AI can be integrated into real-world software. I focus on writing clean, maintainable code and understanding the fundamentals behind the systems I build.
+
+---
+
+## About Me
+
+I enjoy working on projects that combine backend engineering, AI/ML techniques, and modern frontend development. I follow a systematic approach to problem-solving and regularly practice Data Structures and Algorithms to strengthen my core CS foundation.
+
+Over time, I’ve gained experience across different areas, including:
+
+**Backend Development:** FastAPI, Flask, Django, Node.js  
+**Frontend Development:** React (Vite), JavaScript, Zustand, React Query  
+**AI/ML:** Python, TensorFlow, NumPy, Pandas, OpenCV  
+**Blockchain:** Solidity and smart contract development  
+**Databases:** PostgreSQL, MongoDB, NeonDB  
+**Tools & Platforms:** Docker, Git, Render, Vercel, WebSockets, JWT  
+
+I’m currently focusing on improving my skills in AI-driven systems, scalable backend architecture, and building full-stack products from the ground up. I enjoy learning, experimenting, and taking on challenges that help me improve as an engineer.
+
+---
 
 
 ## 🌐 Socials:
