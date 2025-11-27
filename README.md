@@ -1,23 +1,22 @@
 # Hi, I'm Vishwanath Biradar
-
-I'm a Software Engineer with a deep interest in Artificial Intelligence, Machine Learning, and scalable backend systems. I enjoy building practical, well-structured applications and exploring how AI can be integrated into real-world software. I focus on writing clean, maintainable code and understanding the fundamentals behind the systems I build.
+I'm a Software Engineer passionate about building scalable, reliable backend systems and high-quality full-stack applications. I focus on clean architecture, efficient APIs, and production-ready engineering practices. Alongside my SDE work, I also explore AI/ML and enjoy integrating intelligent components into real-world software when they solve meaningful problems.
 
 ---
 
 ## About Me
 
-I enjoy working on projects that combine backend engineering, AI/ML techniques, and modern frontend development. I follow a systematic approach to problem-solving and regularly practice Data Structures and Algorithms to strengthen my core CS foundation.
+I enjoy working on projects that involve backend engineering, system design, and modern frontend development. I approach problems systematically and regularly practice Data Structures and Algorithms to strengthen my core SDE fundamentals.
 
 Over time, I’ve gained experience across different areas, including:
 
-**Backend Development:** FastAPI, Flask, Django, Node.js  
+**Backend Development:** FastAPI, Flask, Django, Node.js, REST APIs, WebSockets,Authentication, Async programming
 **Frontend Development:** React (Vite), JavaScript, Zustand, React Query  
 **AI/ML:** Python, TensorFlow, NumPy, Pandas, OpenCV  
 **Blockchain:** Solidity and smart contract development  
 **Databases:** PostgreSQL, MongoDB, NeonDB  
 **Tools & Platforms:** Docker, Git, Render, Vercel, WebSockets, JWT  
 
-I’m currently focusing on improving my skills in AI-driven systems, scalable backend architecture, and building full-stack products from the ground up. I enjoy learning, experimenting, and taking on challenges that help me improve as an engineer.
+I am currently focused on advancing as an SDE — improving my backend architecture skills, system design understanding, and overall full-stack development expertise. At the same time, I continue exploring applied AI to incorporate efficient, practical ML solutions where they add real value.
 
 ---
 
