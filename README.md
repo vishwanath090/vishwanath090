@@ -8,10 +8,9 @@ I'm a Software Engineer passionate about building scalable, reliable backend sys
 I enjoy working on projects that involve backend engineering, system design, and modern frontend development. I approach problems systematically and regularly practice Data Structures and Algorithms to strengthen my core SDE fundamentals.
 
 Over time, I’ve gained experience across different areas, including:
-
-**Backend Development:** FastAPI, Flask, Django, Node.js, REST APIs, WebSockets,Authentication, Async programming
-**Frontend Development:** React (Vite), JavaScript, Zustand, React Query  
-**AI/ML:** Python, TensorFlow, NumPy, Pandas, OpenCV  
+**Languages** Java, SQL,Python 
+**Backend Development:** SpirngBoot, REST APIs,FastAPi, Streamlit, Django, , REST APIs, WebSockets,Authentication, Async programming
+**Frontend Development:** JavaScript,HTML, CSS  
 **Blockchain:** Solidity and smart contract development  
 **Databases:** PostgreSQL, MongoDB, NeonDB  
 **Tools & Platforms:** Docker, Git, Render, Vercel, WebSockets, JWT  
