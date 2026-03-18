@@ -53,13 +53,16 @@ Software Engineer focused on building **scalable backend systems** and **product
 [![Email](https://img.shields.io/badge/Email-D14836?logo=gmail&logoColor=white)](mailto:vishwanathsbiradar1@gmail.com)
 
 ---
-
 ## 📊 GitHub Stats
 
-![](https://github-readme-stats.vercel.app/api?username=Vishwanath090&theme=dark&hide_border=false&include_all_commits=true&count_private=false)  
-![](https://nirzak-streak-stats.vercel.app/?user=Vishwanath090&theme=dark&hide_border=false)  
-![](https://github-readme-stats.vercel.app/api/top-langs/?username=Vishwanath090&theme=dark&hide_border=false&layout=compact)
+<p align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=Vishwanath090&show_icons=true&theme=tokyonight&hide_border=true&rank_icon=github" height="180"/>
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Vishwanath090&layout=compact&theme=tokyonight&hide_border=true" height="180"/>
+</p>
 
+<p align="center">
+  <img src="https://streak-stats.demolab.com?user=Vishwanath090&theme=tokyonight&hide_border=true"/>
+</p>
 ---
 
 ## 🏆 GitHub Trophies
