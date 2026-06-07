@@ -52,6 +52,11 @@ A fully custom HTTP proxy server built without framework scaffolding — designe
 
 The core engineering work: building a custom thread pool over `ExecutorService`, managing socket lifecycle and HTTP parsing end-to-end, and designing for safe resource sharing across concurrent connections. The challenge wasn't getting it to work — it was understanding where thread contention emerges and designing around it from the start.
 
+<details>
+<summary><b>▶ View architecture — Concurrency Model</b></summary>
+
+<br/>
+
 ```mermaid
 ---
 title: Concurrency Architecture
@@ -78,6 +83,8 @@ flowchart LR
     W1 & W2 & WN <-->|HTTP| RS
 ```
 
+</details>
+
 **Stack:** Java · Thread pooling · Socket programming · HTTP parsing · `ExecutorService` internals
 
 [→ Repository](https://github.com/vishwanath090/multithreaded-http-proxy-server)
@@ -89,6 +96,11 @@ flowchart LR
 A backend that handles two domains with fundamentally different consistency requirements within the same service: a transactional payment wallet and a real-time messaging layer.
 
 The REST layer enforces atomic balance updates and idempotent operations — consistency-first. The WebSocket layer manages async, stateful chat — availability and low latency. The architectural problem was keeping these domains cleanly decoupled while sharing auth infrastructure. JWT middleware gates both surfaces from a shared layer; neither domain bleeds into the other's lifecycle model.
+
+<details>
+<summary><b>▶ View architecture — Dual-Domain Design</b></summary>
+
+<br/>
 
 ```mermaid
 ---
@@ -120,6 +132,8 @@ flowchart TD
     JWT -->|WS /ws/chat| WSH
 ```
 
+</details>
+
 **Stack:** FastAPI · WebSockets · PostgreSQL · JWT · REST API design · Idempotency patterns
 
 [→ Repository](https://github.com/vishwanath090/payment-wallet-chat-backend)
@@ -131,6 +145,11 @@ flowchart TD
 A generative narrative engine built around language model APIs — focused on the engineering layer, not the model layer.
 
 The interesting work wasn't calling the API. It was structuring prompt sequences for multi-turn coherence, managing context windows across generation steps, and handling the failure modes that come with non-deterministic outputs. The goal: production-grade reliability from an inherently probabilistic system. This is what applied LLM integration actually looks like — building reliably *around* a model's constraints.
+
+<details>
+<summary><b>▶ View architecture — LLM Pipeline</b></summary>
+
+<br/>
 
 ```mermaid
 ---
@@ -154,6 +173,8 @@ flowchart LR
     OUT -->|Next Turn| CW
 ```
 
+</details>
+
 **Stack:** Python · LLM API integration · Prompt engineering · Context window management · Failure handling
 
 [→ Repository](https://github.com/vishwanath090/Ai_Story_Generator-)
@@ -165,6 +186,11 @@ flowchart LR
 An identity management system built on cryptographic primitives instead of a central authority. The core model: identity as a verifiable proof chain, not a database row.
 
 Implements digital signature verification and decentralised trust models inspired by blockchain architecture — without a full chain. The engineering point was understanding how authentication can be redesigned at the trust model level, and how those patterns apply to practical backend systems.
+
+<details>
+<summary><b>▶ View architecture — Trust Model</b></summary>
+
+<br/>
 
 ```mermaid
 ---
@@ -192,6 +218,8 @@ flowchart LR
 
     PC --> EX
 ```
+
+</details>
 
 **Stack:** JavaScript · Cryptographic identity · Digital signatures · Decentralised trust · Web3 auth patterns
 
