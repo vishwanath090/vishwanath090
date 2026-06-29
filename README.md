@@ -145,8 +145,6 @@ flowchart TD
 
 </details>
 
-**Load benchmark** *(noop handlers, 10,000 jobs, concurrency 50, 4 workers):*
-2,604 enqueues/s · 535 end-to-end jobs/s · p50 0.71s · p99 3.44s
 
 **Math verification benchmark** *(SHA-256 8k rounds · is_prime · Collatz, 600 jobs, concurrency 30):*
 600/600 correct · 100% accuracy · 0 double-executions · p50 917ms · p99 2.84s
