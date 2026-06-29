@@ -1,35 +1,16 @@
-<!--
-  VISHWANATH BIRADAR — README
--->
- 
 <div align="center">
-# Vishwanath Biradar
- 
-**`Backend Engineer`** &nbsp;·&nbsp; **`AI/ML Systems`** &nbsp;·&nbsp; **`Distributed Systems`**
- 
-<a href="https://www.linkedin.com/in/vishwanath-biradar-582b502a9/">
-  <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white"/>
-</a>
-&nbsp;
-<a href="mailto:vishwanathsbiradar1@gmail.com">
-  <img src="https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white"/>
-</a>
-&nbsp;
-<a href="https://x.com/Vishwanath_Birdr">
-  <img src="https://img.shields.io/badge/X%20(Twitter)-000000?style=for-the-badge&logo=x&logoColor=white"/>
-</a>
-&nbsp;
-<a href="https://github.com/Vishwanath090">
-  <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white"/>
-</a>
-<br/>
-![Profile views](https://komarev.com/ghpvc/?username=Vishwanath090&style=flat-square&color=58a6ff&label=profile+views)
- 
-</div>
----
- 
-<br/>
 
+# Vishwanath Biradar
+
+**Backend Engineer &nbsp;·&nbsp; SDE &nbsp;·&nbsp; AI/LLM Systems**
+
+[LinkedIn](https://www.linkedin.com/in/vishwanath-biradar-582b502a9/) &nbsp;·&nbsp;
+[Email](mailto:vishwanathsbiradar1@gmail.com) &nbsp;·&nbsp;
+[X / Twitter](https://x.com/Vishwanath_Birdr)
+
+</div>
+
+---
 
 Backend engineer focused on distributed systems, scalable API design, and AI-integrated infrastructure. I work primarily in **Java** and **Python** — across REST services, async messaging, event-driven architecture, and LLM pipelines — with an emphasis on correctness, fault tolerance, and production-grade thinking.
 
