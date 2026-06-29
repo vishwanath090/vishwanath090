@@ -1,62 +1,169 @@
+<!--
+  ╔══════════════════════════════════════════════════════════╗
+  ║             VISHWANATH BIRADAR — SYSTEM SPEC             ║
+  ║        Backend Engineer · AI/ML Systems · SDE            ║
+  ╚══════════════════════════════════════════════════════════╝
+-->
+
 <div align="center">
 
-# Vishwanath Biradar
+```
+██╗   ██╗██╗███████╗██╗  ██╗██╗    ██╗ █████╗ ███╗   ██╗ █████╗ ████████╗██╗  ██╗
+██║   ██║██║██╔════╝██║  ██║██║    ██║██╔══██╗████╗  ██║██╔══██╗╚══██╔══╝██║  ██║
+██║   ██║██║███████╗███████║██║ █╗ ██║███████║██╔██╗ ██║███████║   ██║   ███████║
+╚██╗ ██╔╝██║╚════██║██╔══██║██║███╗██║██╔══██║██║╚██╗██║██╔══██║   ██║   ██╔══██║
+ ╚████╔╝ ██║███████║██║  ██║╚███╔███╔╝██║  ██║██║ ╚████║██║  ██║   ██║   ██║  ██║
+  ╚═══╝  ╚═╝╚══════╝╚═╝  ╚═╝ ╚══╝╚══╝ ╚═╝  ╚═╝╚═╝  ╚═══╝╚═╝  ╚═╝   ╚═╝   ╚═╝  ╚═╝
+```
 
-**Backend Engineer &nbsp;·&nbsp; SDE &nbsp;·&nbsp; AI/LLM Systems**
+**`Backend Engineer`** &nbsp;·&nbsp; **`AI/ML Systems`** &nbsp;·&nbsp; **`Distributed Systems`**
 
-[LinkedIn](https://www.linkedin.com/in/vishwanath-biradar-582b502a9/) &nbsp;·&nbsp;
-[Email](mailto:vishwanathsbiradar1@gmail.com) &nbsp;·&nbsp;
-[X / Twitter](https://x.com/Vishwanath_Birdr)
+<a href="https://www.linkedin.com/in/vishwanath-biradar-582b502a9/">
+  <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white"/>
+</a>
+&nbsp;
+<a href="mailto:vishwanathsbiradar1@gmail.com">
+  <img src="https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white"/>
+</a>
+&nbsp;
+<a href="https://x.com/Vishwanath_Birdr">
+  <img src="https://img.shields.io/badge/X%20(Twitter)-000000?style=for-the-badge&logo=x&logoColor=white"/>
+</a>
+&nbsp;
+<a href="https://github.com/Vishwanath090">
+  <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white"/>
+</a>
+
+<br/>
+
+![Profile views](https://komarev.com/ghpvc/?username=Vishwanath090&style=flat-square&color=58a6ff&label=profile+views)
 
 </div>
 
 ---
 
-Backend engineer focused on distributed systems, scalable API design, and AI-integrated infrastructure. I work primarily in **Java** and **Python** — across REST services, async messaging, event-driven architecture, and LLM pipelines — with an emphasis on correctness, fault tolerance, and production-grade thinking.
+<br/>
 
-Currently targeting **Backend SDE**, **Software Engineer**, and **AI/LLM Engineering** roles and internships.
+## `$ whoami`
 
----
+```yaml
+name:       Vishwanath Biradar
+role:       Backend Engineer / AI-ML Systems / SDE
+languages:  [Java, Python, JavaScript]
+location:   India
 
-## Engineering Approach
+philosophy: >
+  Systems fail at their boundaries.
+  I design around the boundaries first —
+  failure modes, consistency tradeoffs, data flow —
+  then write the code.
 
-I reason from first principles: understanding data flow, failure boundaries, and consistency tradeoffs before writing code. I build from scratch before reaching for abstractions — not to avoid libraries, but because understanding the systems layer informs how to use them well.
+currently_targeting:
+  - Backend SDE roles and internships
+  - AI / LLM Engineering positions
+  - Distributed systems infrastructure
 
-Areas of active depth:
+open_to_work: true
+```
 
-- REST and event-driven service architecture
-- Java concurrency — thread safety, executor models, JVM internals
-- Async Python — FastAPI, WebSockets, async I/O patterns
-- LLM pipeline integration — schema-aware generation, self-correction loops, safety validation
-- Distributed system patterns — exactly-once execution, advisory locks, SKIP LOCKED semantics, message delivery guarantees
+I build **distributed systems**, **LLM-integrated pipelines**, and **scalable APIs** — with an emphasis on *correctness under failure*, not just correctness in the happy path. My work lives in the space where backend engineering meets AI infrastructure: building the reliability layers that make probabilistic systems behave like deterministic ones.
 
----
-
-## Technical Stack
-
-| Area | Technologies |
-|---|---|
-| **Languages** | Java · Python · JavaScript |
-| **Backend & APIs** | Spring Boot · Spring Security · FastAPI · Django · REST · WebSockets · JWT · RabbitMQ · asyncpg |
-| **Databases** | PostgreSQL · MySQL · MongoDB · Redis · DuckDB |
-| **AI / ML & RAG** | LLM API integration · NL→SQL generation · Prompt engineering · TensorFlow · PyTorch · scikit-learn |
-| **Tooling** | Docker · Git · Swagger · Postman · Prometheus · Grafana · sqlglot |
+<br/>
 
 ---
 
-## Projects
+## `$ cat EXPERTISE.md`
 
-### Enterprise NL→SQL Engine &nbsp;—&nbsp; Python, LLM APIs
+<table>
+<tr>
+<td width="50%" valign="top">
 
-A production-oriented natural language to SQL engine for real-world Excel and CSV datasets. The engineering problem isn't calling an LLM — it's building the layers around it that make it reliable: schema inference from messy spreadsheets, a safety validator that blocks all non-SELECT SQL at the AST level, and a self-correction loop that retries intelligently on failure.
+### ⚙️ Systems Depth
 
-This is schema-aware SQL generation, not RAG. No chunking, no embeddings, no vector retrieval. The model sees a compact, fully-inferred schema and generates precise DuckDB SQL against it — which means the hard work is in getting the schema right from files that were never designed to be queried.
+- **Java Concurrency** — thread safety, executor models, JVM internals, lock design
+- **Async Python** — FastAPI, WebSockets, async I/O, event loop patterns
+- **PostgreSQL Internals** — SKIP LOCKED, advisory locks, LISTEN/NOTIFY, MVCC
+- **Distributed Patterns** — exactly-once execution, idempotency, TOCTOU elimination, dead-letter queuing
+- **Event-Driven Architecture** — message delivery guarantees, partition-aware queuing
 
-The ingestion layer handles the real world: headers not on row 1, merged cells, mixed-type columns, numeric strings, duplicate names. The safety validator uses `sqlglot` AST parsing — never string matching — and enforces SELECT-only, single-statement, schema-bound queries with automatic LIMIT injection. The system runs 87 tests across three layers, with the validator carrying the highest coverage by design.
+</td>
+<td width="50%" valign="top">
+
+### 🤖 AI / ML Depth
+
+- **LLM Pipeline Engineering** — schema-aware generation, self-correction loops, retry budgets
+- **RAG Architecture** — chunking strategies, hybrid retrieval, embedding models
+- **Prompt Engineering** — structured output, context window management, safety validation at AST level
+- **ML Frameworks** — TensorFlow, PyTorch, scikit-learn
+- **Agent Architectures** — tool-use patterns, multi-step planning, evaluation harnesses
+
+</td>
+</tr>
+</table>
+
+<br/>
+
+---
+
+## `$ cat CAPABILITIES.yaml`
+
+```yaml
+languages:
+  primary:    [Java, Python]
+  secondary:  [JavaScript]
+
+backend:
+  frameworks: [Spring Boot, Spring Security, FastAPI, Django]
+  protocols:  [REST, WebSockets, JWT, RabbitMQ]
+  async:      [asyncpg, LISTEN/NOTIFY, event-driven patterns]
+
+databases:
+  relational: [PostgreSQL, MySQL]
+  nosql:      [MongoDB, Redis, DuckDB]
+  vector:     [learning: Qdrant, OpenSearch]
+
+ai_ml:
+  integration:    [LLM API integration, NL→SQL generation, self-correction loops]
+  engineering:    [Prompt engineering, context window management, AST-level validation]
+  frameworks:     [TensorFlow, PyTorch, scikit-learn]
+  tooling:        [sqlglot, DuckDB, schema inference]
+
+infrastructure:
+  containers:   [Docker]
+  observability: [Prometheus, Grafana, structured logging]
+  tooling:      [Git, Swagger, Postman]
+```
+
+<br/>
+
+---
+
+## `$ ls -la PROJECTS/`
+
+> Engineering projects built to understand systems at depth — not to pad a portfolio, but to hold an opinion about how distributed systems should work.
+
+<br/>
+
+### 🧠 `enterprise-nl2sql-engine` — Python · LLM APIs · DuckDB
+
+**The insight:** Calling an LLM is trivial. Making that call *reliable* against real-world spreadsheets is the engineering problem.
+
+This is a production-oriented NL→SQL engine for messy Excel and CSV datasets. The model sees a compact, fully-inferred schema and generates precise DuckDB SQL — which means the hard work is building everything *around* the model: schema inference that survives merged cells and numeric strings, and a safety validator that blocks all non-SELECT SQL at the **AST level** (never string matching).
+
+```
+Ingestion → Schema Inference → LLM Generation → AST Validation → DuckDB Execution
+               ↑ handles messy headers,              ↑ SELECT-only, LIMIT-injected,
+                 merged cells, mixed types              single-statement, schema-bound
+```
+
+| Metric | Result |
+|--------|--------|
+| Success rate within retry budget | **91.3%** across 23 test questions |
+| Test coverage | **87 tests · 0 failures** |
+| Fixture types covered | clean · multi-sheet · merged-cell · mixed-type · messy-header |
 
 <details>
-<summary><b>▶ View architecture — NL→SQL Pipeline</b></summary>
-
+<summary><b>▶ Architecture diagram</b></summary>
 <br/>
 
 ```mermaid
@@ -91,26 +198,29 @@ flowchart LR
 
 </details>
 
-**Benchmark:** 91.3% success within retry budget across 23 questions spanning clean, multi-sheet, merged-cell, mixed-type, and messy-header fixtures. 87 tests, 0 failures.
+`Python` `FastAPI` `DuckDB` `LLM APIs` `sqlglot` `Prometheus` `Docker`
 
-**Stack:** Python · FastAPI · DuckDB · LLM API integration · sqlglot · Prompt engineering · Prometheus · Docker
-
-[→ Repository](https://github.com/vishwanath090/enterprise-nl2sql-engine)
+**[→ View Repository](https://github.com/vishwanath090/enterprise-nl2sql-engine)**
 
 ---
-### PostgreSQL-Based Distributed Job Scheduler &nbsp;—&nbsp; Python
 
-A production-grade background job queue built entirely on PostgreSQL — no Redis, no Celery, no external message broker. The engineering challenge was achieving exactly-once execution with durable ordering and horizontal scaling using only PostgreSQL primitives.
+### 🔒 `PostgreSQL-Based-Distributed-Job-Scheduler-Processor` — Python · PostgreSQL
 
-The core is a two-phase locking strategy. `SELECT … FOR UPDATE SKIP LOCKED` eliminates the TOCTOU race at claim time: two workers cannot hold an exclusive row lock on the same row simultaneously, and a slow worker doesn't cause queue head-of-line blocking. But this lock releases when the claim transaction commits, leaving a window between commit and handler completion. `pg_try_advisory_lock` closes it — session-scoped, non-blocking, automatically released on worker crash. Either primitive alone is insufficient; together they form a complete exactly-once guarantee across the full job lifecycle.
+**The insight:** Exactly-once execution needs two locks. Either primitive alone is insufficient — and most queue implementations get this wrong.
 
-`LISTEN/NOTIFY` replaces Redis pub/sub for push-driven worker wakeup, with a 5-second polling fallback for missed notifications during restarts. A heartbeat loop and stale reaper handle crashed workers: jobs are reset to `pending` without manual intervention, without losing the result of work already done.
+A production-grade job queue built entirely on PostgreSQL — no Redis, no Celery, no external broker. The core is a two-phase locking strategy: `SELECT FOR UPDATE SKIP LOCKED` eliminates the TOCTOU race at claim time; `pg_try_advisory_lock` closes the window between commit and handler completion. `LISTEN/NOTIFY` replaces Redis pub/sub for push-driven wakeup. A heartbeat loop and stale reaper handle crashed workers without losing already-completed work.
 
-The exactly-once guarantee isn't claimed — it's verified. A math verification benchmark runs CPU-bound jobs (SHA-256 chains, is_prime, Collatz sequences) and checks every result against pre-computed ground truth. 600 jobs, 0 incorrect results, 0 double executions.
+The exactly-once guarantee is *verified*, not claimed — math verification jobs (SHA-256 chains, primality tests, Collatz sequences) check every result against pre-computed ground truth.
+
+| Benchmark | Result |
+|-----------|--------|
+| Enqueue throughput (10k jobs, concurrency 50) | **2,604 jobs/s** |
+| End-to-end throughput | **535 jobs/s · p99 3.44s** |
+| Math verification (600 jobs, concurrency 30) | **600/600 correct · 0 double-executions** |
+| Test suite | **35 tests · 0 failures** |
 
 <details>
-<summary><b>▶ View architecture — Distributed Execution Model</b></summary>
-
+<summary><b>▶ Architecture diagram</b></summary>
 <br/>
 
 ```mermaid
@@ -145,28 +255,20 @@ flowchart TD
 
 </details>
 
-**Load benchmark** *(noop handlers, 10,000 jobs, concurrency 50, 4 workers):*
-2,604 enqueues/s · 535 end-to-end jobs/s · p50 0.71s · p99 3.44s
+`Python` `FastAPI` `PostgreSQL` `asyncpg` `SKIP LOCKED` `Advisory Locks` `LISTEN/NOTIFY` `Docker`
 
-**Math verification benchmark** *(SHA-256 8k rounds · is_prime · Collatz, 600 jobs, concurrency 30):*
-600/600 correct · 100% accuracy · 0 double-executions · p50 917ms · p99 2.84s
+**[→ View Repository](https://github.com/vishwanath090/PostgreSQL-Based-Distributed-Job-Scheduler-Processor)**
 
-**35 tests, 0 failures** — DLQ transitions, exactly-once proof, priority ordering, retry backoff, stale reaper recovery, advisory lock contention.
-
-**Stack:** Python · FastAPI · PostgreSQL · asyncpg · `SKIP LOCKED` · Advisory locks · `LISTEN/NOTIFY` · Docker
-
-[→ Repository](https://github.com/vishwanath090/PostgreSQL-Based-Distributed-Job-Scheduler-Processor)
 ---
 
-### Multithreaded HTTP Proxy Server &nbsp;—&nbsp; Java
+### 🌐 `multithreaded-http-proxy-server` — Java
 
-A fully custom HTTP proxy server built without framework scaffolding — designed to understand Java concurrency at the systems level rather than through library abstractions.
+**The insight:** You can't reason about thread contention until you've built the system that creates it.
 
-The core engineering work: building a custom thread pool over `ExecutorService`, managing socket lifecycle and HTTP parsing end-to-end, and designing for safe resource sharing across concurrent connections. The challenge wasn't getting it to work — it was understanding where thread contention emerges and designing around it from the start.
+A fully custom HTTP proxy server with no framework scaffolding — built to understand Java concurrency at the systems level. Custom thread pool over `ExecutorService`, full socket lifecycle management, HTTP parsing from scratch. The challenge wasn't making it work; it was understanding *where contention emerges* and designing the resource-sharing model before writing a line of handler code.
 
 <details>
-<summary><b>▶ View architecture — Concurrency Model</b></summary>
-
+<summary><b>▶ Architecture diagram</b></summary>
 <br/>
 
 ```mermaid
@@ -197,21 +299,20 @@ flowchart LR
 
 </details>
 
-**Stack:** Java · Thread pooling · Socket programming · HTTP parsing · `ExecutorService` internals
+`Java` `Thread Pooling` `Socket Programming` `HTTP Parsing` `ExecutorService`
 
-[→ Repository](https://github.com/vishwanath090/multithreaded-http-proxy-server)
+**[→ View Repository](https://github.com/vishwanath090/multithreaded-http-proxy-server)**
 
 ---
 
-### Payment Wallet + Real-Time Chat Backend &nbsp;—&nbsp; Python
+### 💳 `payment-wallet-chat-backend` — Python · FastAPI
 
-A backend that handles two domains with fundamentally different consistency requirements within the same service: a transactional payment wallet and a real-time messaging layer.
+**The insight:** Consistency-first and availability-first are fundamentally different contracts. A single backend can support both — if you respect the boundary.
 
-The REST layer enforces atomic balance updates and idempotent operations — consistency-first. The WebSocket layer manages async, stateful chat — availability and low latency. The architectural problem was keeping these domains cleanly decoupled while sharing auth infrastructure. JWT middleware gates both surfaces from a shared layer; neither domain bleeds into the other's lifecycle model.
+A backend that serves two domains with different consistency requirements in the same service. The wallet layer enforces atomic balance updates and idempotent operations. The WebSocket chat layer manages stateful, low-latency messaging. JWT middleware gates both surfaces from a shared layer — neither domain bleeds into the other's lifecycle model.
 
 <details>
-<summary><b>▶ View architecture — Dual-Domain Design</b></summary>
-
+<summary><b>▶ Architecture diagram</b></summary>
 <br/>
 
 ```mermaid
@@ -220,7 +321,6 @@ title: Dual-Domain Architecture
 ---
 flowchart TD
     Client([Client App])
-
     JWT[JWT Auth Middleware]
 
     Client -->|HTTP| JWT
@@ -246,137 +346,91 @@ flowchart TD
 
 </details>
 
-**Stack:** FastAPI · WebSockets · PostgreSQL · JWT · REST API design · Idempotency patterns
+`FastAPI` `WebSockets` `PostgreSQL` `JWT` `Idempotency Patterns`
 
-[→ Repository](https://github.com/vishwanath090/payment-wallet-chat-backend)
+**[→ View Repository](https://github.com/vishwanath090/payment-wallet-chat-backend)**
 
 ---
 
-### AI Story Generator &nbsp;—&nbsp; Python, LLM APIs
+### 📖 `Ai_Story_Generator` — Python · LLM APIs
 
-A generative narrative engine built around language model APIs — focused on the engineering layer, not the model layer.
+**The insight:** The API call is 5% of the problem. Managing context, coherence, and failure across generation steps is the other 95%.
 
-The interesting work wasn't calling the API. It was structuring prompt sequences for multi-turn coherence, managing context windows across generation steps, and handling the failure modes that come with non-deterministic outputs. The goal: production-grade reliability from an inherently probabilistic system.
+A generative narrative engine with structured prompt sequencing, context window management across multi-turn generation, and failure handling for non-deterministic outputs. The goal was production-grade reliability from an inherently probabilistic system.
 
-<details>
-<summary><b>▶ View architecture — LLM Pipeline</b></summary>
+`Python` `LLM APIs` `Prompt Engineering` `Context Window Management`
+
+**[→ View Repository](https://github.com/vishwanath090/Ai_Story_Generator-)**
+
+---
+
+### 🔑 `Decentralised-Identity-Verification` — JavaScript
+
+**The insight:** Identity is a verifiable proof chain — not a database row.
+
+An identity management system built on cryptographic primitives instead of a central authority. Implements digital signature verification and decentralised trust models inspired by blockchain architecture — an exploration of how authentication can be redesigned at the trust-model level.
+
+`JavaScript` `Cryptographic Identity` `Digital Signatures` `Decentralised Trust`
+
+**[→ View Repository](https://github.com/vishwanath090/Decentralised-Identity-Verification)**
 
 <br/>
 
-```mermaid
 ---
-title: LLM Pipeline Architecture
----
-flowchart LR
-    IN([User Input])
 
-    subgraph Pipeline[Generation Pipeline]
-        PE[Prompt Engineering]
-        CW[Context Window Manager]
-        API[LLM API Call]
-        RH[Response Handler]
-        VA{Valid Output?}
-        PE --> CW --> API --> RH --> VA
-    end
+## `$ tail -f LEARNING_LOG`
 
-    IN --> PE
-    VA -->|Yes| OUT([Story Output])
-    VA -->|Retry| CW
-    OUT -->|Next Turn| CW
 ```
-
-</details>
-
-**Stack:** Python · LLM API integration · Prompt engineering · Context window management · Failure handling
-
-[→ Repository](https://github.com/vishwanath090/Ai_Story_Generator-)
-
----
-
-### Decentralised Identity Verification &nbsp;—&nbsp; JavaScript
-
-An identity management system built on cryptographic primitives instead of a central authority. The core model: identity as a verifiable proof chain, not a database row.
-
-Implements digital signature verification and decentralised trust models inspired by blockchain architecture — without a full chain. The engineering point was understanding how authentication can be redesigned at the trust model level, and how those patterns apply to practical backend systems.
-
-<details>
-<summary><b>▶ View architecture — Trust Model</b></summary>
+[ACTIVE]  RAG pipeline architecture     → chunking, embedding models, hybrid retrieval
+[ACTIVE]  High-performance Java         → JVM internals, GC tuning, Project Reactor
+[ACTIVE]  Distributed systems at scale  → Kafka, consensus protocols, partition-aware queuing
+[ACTIVE]  Observability engineering     → structured logging, distributed tracing, SLO alerting
+[ACTIVE]  Agent architectures           → tool-use, multi-step planning, eval harnesses
+```
 
 <br/>
 
-```mermaid
----
-title: Trust and Verification Model
----
-flowchart LR
-    subgraph Issuance[Identity Issuance]
-        KG[Key Pair Generation]
-        IC[Identity Claim]
-        DS[Sign with Private Key]
-        PC[Proof Chain Entry]
-        KG --> IC --> DS --> PC
-    end
-
-    subgraph Verification[Verification Flow]
-        EX[Extract Claim]
-        SV[Verify Signature]
-        TR{Trust Valid?}
-        GA([Granted ✓])
-        DN([Denied ✗])
-        EX --> SV --> TR
-        TR -->|Yes| GA
-        TR -->|No| DN
-    end
-
-    PC --> EX
-```
-
-</details>
-
-**Stack:** JavaScript · Cryptographic identity · Digital signatures · Decentralised trust · Web3 auth patterns
-
-[→ Repository](https://github.com/vishwanath090/Decentralised-Identity-Verification)
-
 ---
 
-## Currently Exploring
-
-```
-→  RAG pipeline architecture        — chunking strategies, embedding models, hybrid retrieval
-→  High-performance Java            — JVM internals, GC tuning, Project Reactor
-→  Distributed systems at scale     — Kafka, consensus protocols, partition-aware queuing
-→  Observability engineering        — structured logging, tracing, SLO-based alerting
-→  Agent architectures              — tool-use, multi-step planning, evaluation harnesses
-```
-
----
-
-## GitHub Activity
+## `$ git log --oneline METRICS`
 
 <div align="center">
 
-<img src="https://github-readme-stats.vercel.app/api?username=Vishwanath090&show_icons=true&theme=tokyonight&hide_border=true&rank_icon=github&include_all_commits=true&count_private=true" height="170"/>
+<img src="https://github-readme-stats.vercel.app/api?username=Vishwanath090&show_icons=true&theme=github_dark&hide_border=true&rank_icon=github&include_all_commits=true&count_private=true&title_color=58a6ff&icon_color=58a6ff&text_color=c9d1d9" height="170"/>
 &nbsp;&nbsp;
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Vishwanath090&layout=compact&theme=tokyonight&hide_border=true&langs_count=6" height="170"/>
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Vishwanath090&layout=compact&theme=github_dark&hide_border=true&langs_count=6&title_color=58a6ff&text_color=c9d1d9" height="170"/>
 
 <br/><br/>
 
-<img src="https://streak-stats.demolab.com?user=Vishwanath090&theme=tokyonight&hide_border=true" height="150"/>
+<img src="https://streak-stats.demolab.com?user=Vishwanath090&theme=github-dark-blue&hide_border=true&stroke=58a6ff&ring=58a6ff&fire=3fb950&currStreakLabel=58a6ff" height="150"/>
 
 </div>
 
+<br/>
+
 ---
 
-## Contact
+## `$ ping CONTACT`
 
-Open to **backend engineering**, **SDE**, and **AI/LLM infrastructure** roles and internships.
+Open to **Backend SDE**, **Software Engineer**, and **AI/LLM Engineering** roles and internships.
 
-**Email:** vishwanathsbiradar1@gmail.com  
-**LinkedIn:** [vishwanath-biradar-582b502a9](https://www.linkedin.com/in/vishwanath-biradar-582b502a9/)  
-**GitHub:** [Vishwanath090](https://github.com/Vishwanath090)
+```
+vishwanathsbiradar1@gmail.com
+linkedin.com/in/vishwanath-biradar-582b502a9
+github.com/Vishwanath090
+```
+
+<br/>
 
 ---
 
 <div align="center">
-<sub><i>I build to understand. The code follows.</i></sub>
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│   I don't just write code that works.                       │
+│   I build systems that fail predictably — and recover.      │
+└─────────────────────────────────────────────────────────────┘
+```
+
 </div>
