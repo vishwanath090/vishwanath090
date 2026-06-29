@@ -27,8 +27,8 @@ Areas of active depth:
 - REST and event-driven service architecture
 - Java concurrency — thread safety, executor models, JVM internals
 - Async Python — FastAPI, WebSockets, async I/O patterns
-- LLM pipeline integration and RAG architecture
-- Distributed system patterns — consistency models, message delivery guarantees, fault isolation
+- LLM pipeline integration — schema-aware generation, self-correction loops, safety validation
+- Distributed system patterns — exactly-once execution, advisory locks, SKIP LOCKED semantics, message delivery guarantees
 
 ---
 
@@ -37,14 +37,120 @@ Areas of active depth:
 | Area | Technologies |
 |---|---|
 | **Languages** | Java · Python · JavaScript |
-| **Backend & APIs** | Spring Boot · Spring Security · FastAPI · Django · REST · WebSockets · JWT · RabbitMQ |
-| **Databases** | PostgreSQL · MySQL · MongoDB · Redis |
-| **AI / ML & RAG** | LLM API integration · RAG pipeline design · TensorFlow · PyTorch · scikit-learn |
-| **Tooling** | Docker · Git · Swagger · Postman |
+| **Backend & APIs** | Spring Boot · Spring Security · FastAPI · Django · REST · WebSockets · JWT · RabbitMQ · asyncpg |
+| **Databases** | PostgreSQL · MySQL · MongoDB · Redis · DuckDB |
+| **AI / ML & RAG** | LLM API integration · NL→SQL generation · Prompt engineering · TensorFlow · PyTorch · scikit-learn |
+| **Tooling** | Docker · Git · Swagger · Postman · Prometheus · Grafana · sqlglot |
 
 ---
 
 ## Projects
+
+### Enterprise NL→SQL Engine &nbsp;—&nbsp; Python, LLM APIs
+
+A production-oriented natural language to SQL engine for real-world Excel and CSV datasets. The engineering problem isn't calling an LLM — it's building the layers around it that make it reliable: schema inference from messy spreadsheets, a safety validator that blocks all non-SELECT SQL at the AST level, and a self-correction loop that retries intelligently on failure.
+
+This is schema-aware SQL generation, not RAG. No chunking, no embeddings, no vector retrieval. The model sees a compact, fully-inferred schema and generates precise DuckDB SQL against it — which means the hard work is in getting the schema right from files that were never designed to be queried.
+
+The ingestion layer handles the real world: headers not on row 1, merged cells, mixed-type columns, numeric strings, duplicate names. The safety validator uses `sqlglot` AST parsing — never string matching — and enforces SELECT-only, single-statement, schema-bound queries with automatic LIMIT injection. The system runs 87 tests across three layers, with the validator carrying the highest coverage by design.
+
+<details>
+<summary><b>▶ View architecture — NL→SQL Pipeline</b></summary>
+
+<br/>
+
+```mermaid
+---
+title: NL→SQL Pipeline Architecture
+---
+flowchart LR
+    IN([User Input + Excel File])
+
+    subgraph Ingestion[Ingestion Layer]
+        HD[Header Detection\nscores first 10 rows]
+        MC[Merged Cell Resolution\nforward-fill top-left value]
+        TI[Type Inference\n90% agreement threshold]
+        DK[(DuckDB\nIn-Memory Table)]
+        HD --> MC --> TI --> DK
+    end
+
+    subgraph Pipeline[Generation Pipeline]
+        SS[Schema Serializer]
+        GEN[LLM Generator\nClaude Sonnet]
+        VAL{Safety Validator\nsqlglot AST}
+        EXEC[DuckDB Executor]
+        SS --> GEN --> VAL
+        VAL -->|Valid| EXEC
+        VAL -->|Reject / retry| GEN
+    end
+
+    IN --> Ingestion
+    DK --> SS
+    EXEC --> OUT([Query Results\n+ Attempt Log])
+```
+
+</details>
+
+**Benchmark:** 91.3% success within retry budget across 23 questions spanning clean, multi-sheet, merged-cell, mixed-type, and messy-header fixtures. 87 tests, 0 failures.
+
+**Stack:** Python · FastAPI · DuckDB · LLM API integration · sqlglot · Prompt engineering · Prometheus · Docker
+
+[→ Repository](https://github.com/vishwanath090/enterprise-nl2sql-engine)
+
+---
+
+### PostgreSQL-Based Distributed Job Scheduler &nbsp;—&nbsp; Python
+
+A production-grade background job queue built entirely on PostgreSQL — no Redis, no Celery, no external message broker. The engineering challenge was achieving exactly-once execution with durable ordering and horizontal scaling using only PostgreSQL primitives.
+
+The key insight is a two-phase locking strategy. `SELECT … FOR UPDATE SKIP LOCKED` eliminates the TOCTOU race at claim time — no two workers can hold an exclusive row lock simultaneously, and slow workers don't cause head-of-line blocking. But this lock releases when the claim transaction commits, leaving a window between commit and handler completion. `pg_try_advisory_lock` closes it: session-scoped, non-blocking, and automatically released on worker crash. Either primitive alone is insufficient; together they form a complete exactly-once guarantee.
+
+`LISTEN/NOTIFY` replaces Redis pub/sub for push-driven worker wakeup, with a 5-second polling fallback for missed notifications. A stale reaper resets jobs from crashed workers. The result: 2,604 enqueues/second and 535 end-to-end jobs/second with p99 latency under 3.5 seconds — with one fewer infrastructure dependency.
+
+<details>
+<summary><b>▶ View architecture — Distributed Execution Model</b></summary>
+
+<br/>
+
+```mermaid
+---
+title: Distributed Job Execution Architecture
+---
+flowchart TD
+    Client([Client App])
+    API[FastAPI\nPOST /jobs]
+    PG[(PostgreSQL\njobs + dead_letter_jobs)]
+    TRG[pg_notify trigger\non INSERT]
+
+    subgraph Workers[Worker Pool]
+        W1[Worker 1\nSKIP LOCKED +\nadvisory_lock]
+        W2[Worker 2\nSKIP LOCKED +\nadvisory_lock]
+        WN[Worker N]
+        HR[Heartbeat Loop\nevery 10s]
+        SR[Stale Reaper\nevery 15s]
+    end
+
+    DLQ[(Dead Letter Queue\nafter retry exhaustion)]
+
+    Client -->|HTTP| API
+    API -->|INSERT| PG
+    PG --> TRG
+    TRG -->|LISTEN 'job_channel'| W1 & W2 & WN
+    W1 & W2 & WN <-->|claim + execute| PG
+    W1 & W2 & WN -->|retry exhausted| DLQ
+    HR -->|UPDATE heartbeat_at| PG
+    SR -->|reset stale jobs| PG
+```
+
+</details>
+
+**Benchmark:** 2,604 jobs/s enqueue · 535 end-to-end jobs/s · p50 0.71s · p99 3.44s — on a single untuned PostgreSQL host. 25 tests, 0 failures.
+
+**Stack:** Python · FastAPI · PostgreSQL · asyncpg · `SKIP LOCKED` · Advisory locks · `LISTEN/NOTIFY` · Docker
+
+[→ Repository](https://github.com/vishwanath090/PostgreSQL-Based-Distributed-Job-Scheduler-Processor)
+
+---
 
 ### Multithreaded HTTP Proxy Server &nbsp;—&nbsp; Java
 
@@ -144,7 +250,7 @@ flowchart TD
 
 A generative narrative engine built around language model APIs — focused on the engineering layer, not the model layer.
 
-The interesting work wasn't calling the API. It was structuring prompt sequences for multi-turn coherence, managing context windows across generation steps, and handling the failure modes that come with non-deterministic outputs. The goal: production-grade reliability from an inherently probabilistic system. This is what applied LLM integration actually looks like — building reliably *around* a model's constraints.
+The interesting work wasn't calling the API. It was structuring prompt sequences for multi-turn coherence, managing context windows across generation steps, and handling the failure modes that come with non-deterministic outputs. The goal: production-grade reliability from an inherently probabilistic system.
 
 <details>
 <summary><b>▶ View architecture — LLM Pipeline</b></summary>
@@ -231,10 +337,10 @@ flowchart LR
 
 ```
 →  RAG pipeline architecture        — chunking strategies, embedding models, hybrid retrieval
-→  LLM-integrated microservices     — inference as a first-class backend service
-→  Distributed systems design       — consensus protocols, CAP tradeoffs, event-driven patterns
 →  High-performance Java            — JVM internals, GC tuning, Project Reactor
-→  Message queue architecture       — RabbitMQ internals, event sourcing, CQRS
+→  Distributed systems at scale     — Kafka, consensus protocols, partition-aware queuing
+→  Observability engineering        — structured logging, tracing, SLO-based alerting
+→  Agent architectures              — tool-use, multi-step planning, evaluation harnesses
 ```
 
 ---
