@@ -98,12 +98,14 @@ flowchart LR
 [→ Repository](https://github.com/vishwanath090/enterprise-nl2sql-engine)
 
 ---
-
 ### PostgreSQL-Based Distributed Job Scheduler &nbsp;—&nbsp; Python
 
 A production-grade background job queue built entirely on PostgreSQL — no Redis, no Celery, no external message broker. The engineering challenge was achieving exactly-once execution with durable ordering and horizontal scaling using only PostgreSQL primitives.
-The core is a two-phase locking strategy. SELECT … FOR UPDATE SKIP LOCKED eliminates the TOCTOU race at claim time: two workers cannot hold an exclusive row lock on the same row simultaneously, and a slow worker doesn't cause queue head-of-line blocking. But this lock releases when the claim transaction commits, leaving a window between commit and handler completion. pg_try_advisory_lock closes it — session-scoped, non-blocking, automatically released on worker crash. Either primitive alone is insufficient; together they form a complete exactly-once guarantee across the full job lifecycle.
-LISTEN/NOTIFY replaces Redis pub/sub for push-driven worker wakeup, with a 5-second polling fallback for missed notifications during restarts. A heartbeat loop and stale reaper handle crashed workers: jobs are reset to pending without manual intervention, without losing the result of work already done.
+
+The core is a two-phase locking strategy. `SELECT … FOR UPDATE SKIP LOCKED` eliminates the TOCTOU race at claim time: two workers cannot hold an exclusive row lock on the same row simultaneously, and a slow worker doesn't cause queue head-of-line blocking. But this lock releases when the claim transaction commits, leaving a window between commit and handler completion. `pg_try_advisory_lock` closes it — session-scoped, non-blocking, automatically released on worker crash. Either primitive alone is insufficient; together they form a complete exactly-once guarantee across the full job lifecycle.
+
+`LISTEN/NOTIFY` replaces Redis pub/sub for push-driven worker wakeup, with a 5-second polling fallback for missed notifications during restarts. A heartbeat loop and stale reaper handle crashed workers: jobs are reset to `pending` without manual intervention, without losing the result of work already done.
+
 The exactly-once guarantee isn't claimed — it's verified. A math verification benchmark runs CPU-bound jobs (SHA-256 chains, is_prime, Collatz sequences) and checks every result against pre-computed ground truth. 600 jobs, 0 incorrect results, 0 double executions.
 
 <details>
@@ -143,19 +145,17 @@ flowchart TD
 
 </details>
 
-**Benchmark:** Load benchmark (noop handlers, 10,000 jobs, concurrency 50, 4 workers):
-
+**Load benchmark** *(noop handlers, 10,000 jobs, concurrency 50, 4 workers):*
 2,604 enqueues/s · 535 end-to-end jobs/s · p50 0.71s · p99 3.44s
-Math verification benchmark (SHA-256 8k rounds · is_prime · Collatz, 600 jobs, concurrency 30):
 
+**Math verification benchmark** *(SHA-256 8k rounds · is_prime · Collatz, 600 jobs, concurrency 30):*
 600/600 correct · 100% accuracy · 0 double-executions · p50 917ms · p99 2.84s
-35 tests, 0 failures — DLQ transitions, exactly-once proof, priority ordering, retry backoff, stale reaper recovery, advisory lock contention.
-Stack: Python · FastAPI · PostgreSQL · asyncpg · SKIP LOCKED · Advisory locks · LISTEN/NOTIFY · Docker
+
+**35 tests, 0 failures** — DLQ transitions, exactly-once proof, priority ordering, retry backoff, stale reaper recovery, advisory lock contention.
 
 **Stack:** Python · FastAPI · PostgreSQL · asyncpg · `SKIP LOCKED` · Advisory locks · `LISTEN/NOTIFY` · Docker
 
 [→ Repository](https://github.com/vishwanath090/PostgreSQL-Based-Distributed-Job-Scheduler-Processor)
-
 ---
 
 ### Multithreaded HTTP Proxy Server &nbsp;—&nbsp; Java
